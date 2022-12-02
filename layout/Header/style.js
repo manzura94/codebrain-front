@@ -4,6 +4,7 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 20px 0;
+  background:#202443;
 `;
 
 const Features = styled.div`
@@ -78,5 +79,7 @@ const Account = styled.div`
         }
     }
 `
+
+
 
 export { Header, Features, Account };

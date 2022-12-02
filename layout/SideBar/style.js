@@ -3,9 +3,15 @@ import styled from "styled-components";
 const Menu =  styled.div`
 display: flex;
 flex-direction: column;
-width: 10%;
-background: #fff;
-min-height: 50vh;
+gap: 28px;
+min-height: calc(100vh - 100px);
+padding: 150px 24px 0;
+background:#202443;
 `
 
-export  {Menu}
+const IconWrap = styled.div`
+padding: 16px;
+border-radius: 7px;
+`
+
+export  {Menu, IconWrap}
