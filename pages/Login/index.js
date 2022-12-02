@@ -1,5 +1,5 @@
 import { Context } from "../../context/UserContext";
-import { useLoad, usePostRequest } from "../../hooks/request";
+import {  usePostRequest } from "../../hooks/request";
 import { login, user } from "../../utils/urls";
 import * as React from "react";
 import Avatar from "@mui/material/Avatar";
