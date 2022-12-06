@@ -10,7 +10,7 @@ const Followers = () => {
       <Account>
         <Account.Info>
           <div>
-            <Image src={avatar} />
+            <Image src={avatar} alt='avatar-image'/>
           </div>
           <div className="account-info">
             <p className="account-name">Nurbek Sapayev</p>
@@ -27,7 +27,7 @@ const Followers = () => {
         <Statistics.Title>Statistika</Statistics.Title>
         <Statistics.Info>
           <div className="info-item">
-            <Image src={statistics} width={82} height={82}/>
+            <Image src={statistics} width={82} height={82} alt='avatar-img'/>
           </div>
           <div className="info-item">
             <h3 className="info-title">Progress</h3>

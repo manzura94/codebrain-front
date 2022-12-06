@@ -1,13 +1,16 @@
 import React from 'react'
 import { Page } from '../layout'
+import Exercises from '../components/Library'
 
 
 const Library = () => {
+
+
   return (
     <Page>
-    <div>
-      Hello world library
-    </div>
+    <section>
+    <Exercises/>
+    </section>
   </Page>
   )
 }

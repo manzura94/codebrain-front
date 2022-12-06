@@ -51,19 +51,19 @@ const Exercises = () => {
             <div className="text">Tic-Tac-Toe</div>
             <div className="info">
               <span className="info-icon">
-                <Image src={level} width={15} height={21} />
+                <Image src={level} width={15} height={21} alt='level'/>
               </span>
               <span className="info-numbers">Oson</span>
             </div>
             <div className="info">
               <span className="info-icon">
-                <Image src={count} height={21} width={21} />
+                <Image src={count} height={21} width={21} alt='counting'/>
               </span>
               <span className="info-numbers">225</span>
             </div>
             <div className="info">
               <span className="info-icon">
-                <Image src={hand} height={21} width={21} />
+                <Image src={hand} height={21} width={21} alt='handing'/>
               </span>
               <span className="info-numbers">2 brain</span>
             </div>
@@ -75,7 +75,7 @@ const Exercises = () => {
         <CodeMasters>
           <Section>
             <div className="section-img">
-              <Image src={master} width={84} height={84}/>
+              <Image src={master} width={84} height={84} alt='master'/>
             </div>
             <div className="section-info">
               <h2 className="section-title">CodeMasters’ Journey</h2>
@@ -87,7 +87,7 @@ const Exercises = () => {
           </Section>
           <Section>
           <div className="section-img">
-              <Image src={master} width={84} height={84} />
+              <Image src={master} width={84} height={84} alt='journey'/>
             </div>
             <div className="section-info">
               <h2 className="section-title">CodeMasters’ Journey</h2>

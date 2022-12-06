@@ -12,7 +12,7 @@ const Ratings = () => {
       <General>
         <General.Item>
           <div className="item-img">
-            <Image src={first} />
+            <Image src={first} alt='first'/>
           </div>
           <div className="item-info">
             <p className="username">Polvonnazar</p>
@@ -21,7 +21,7 @@ const Ratings = () => {
         </General.Item>
         <General.Item>
           <div className="item-img">
-            <Image src={second} />
+            <Image src={second} alt='second'/>
           </div>
           <div className="item-info">
             <p className="username">Jo’rabek</p>
@@ -30,7 +30,7 @@ const Ratings = () => {
         </General.Item>
         <General.Item>
           <div className="item-img">
-            <Image src={third} />
+            <Image src={third} alt='third'/>
           </div>
           <div className="item-info">
             <p className="username">Umidjon</p>

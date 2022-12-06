@@ -53,7 +53,7 @@ export function useRequest(options = {}) {
 export function useLoad(options, dependencies = []) {
 	const request = useRequest({ method: 'GET', ...options })
 	useEffect(() => {
-		request.request()
+		request.request()		
 	}, dependencies)
 
 	return request

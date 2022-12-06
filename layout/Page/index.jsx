@@ -13,7 +13,7 @@ const Page = ({ children }) => {
 
   if(loading){
     return <BlackMirror>
-      <Image src={imfine} width={500} height={500}/>
+      <Image src={imfine} width={500} height={500} alt="imfine"/>
     </BlackMirror>
   }
 

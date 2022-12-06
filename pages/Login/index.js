@@ -1,7 +1,7 @@
+import * as React from "react";
 import { Context } from "../../context/UserContext";
 import {  usePostRequest } from "../../hooks/request";
 import { login } from "../../utils/urls";
-import * as React from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -33,8 +33,8 @@ const Login = () => {
       },
     });
     const {code,error, accessToken, refreshToken,id} = response;
-    console.log(response, 'response');
     if (
+      (code === 400) ||
       (code === 400 && error === "USER_NOT_FOUND") ||
       (code === 400 && error === "WRONG_PASSWORD") 
       
@@ -48,10 +48,10 @@ const Login = () => {
       localStorage.setItem("id", id);
       localStorage.setItem("user", true);
     }
-    console.log(response, "response");
   };
 
   return (
+    
     <Wrapper>
       <ThemeProvider theme={theme}>
         <Container component="main" maxWidth="xs">

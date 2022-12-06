@@ -4,3 +4,4 @@ export const user ="/user";
 export const login ="/user/login";
 export const refresh ="/user/refresh";
 export const logout ="/user/logout";
+export const katas = "/katas"

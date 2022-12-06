@@ -27,6 +27,10 @@ const HeaderPage = () => {
     localStorage.clear();
   };
 
+  const closeMenu = ()=>{
+    setAnchorEl(false)
+  }
+
   return (
     <Header className=" container">
       <div className="header__logo">
@@ -45,12 +49,6 @@ const HeaderPage = () => {
           </div>
         </Features.Scores>
         <Account>
-          {/* <div className="header__account-avatar">
-                    <Image src={avatar} alt="account-avatar"/>
-                </div>
-                <div className="header__account-arrow">
-                    <Image src={arrow} alt="arrow-down"/>
-                </div> */}
           <Button
             id="demo-positioned-button"
             aria-controls={open ? "demo-positioned-menu" : undefined}
@@ -70,7 +68,7 @@ const HeaderPage = () => {
             aria-labelledby="demo-positioned-button"
             anchorEl={anchorEl}
             open={open}
-            onClose={handleClose}
+            onClose={closeMenu}
             anchorOrigin={{
               vertical: "bottom",
               horizontal: "left",

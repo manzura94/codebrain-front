@@ -5,6 +5,7 @@ const Header = styled.header`
   justify-content: space-between;
   padding: 20px 0;
   background:#202443;
+  position: fixed;
 `;
 
 const Features = styled.div`
