@@ -31,8 +31,8 @@ const Katas = ({ data }) => {
         {result?.map((item) => {
           const tags = item.tags.split(",");
           return (
-            <Link href={`/library/${item.id}`}>
-            <Container.Item key={item.id}>
+            <Link href={`/library/${item.id}`} key={item.id}>
+            <Container.Item >
               <Container.Left>
                 <h3 className="title">{item.title}</h3>
                 <div className="level">
