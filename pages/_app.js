@@ -1,5 +1,5 @@
 import UserContext from "../context/UserContext";
-import {GlobalStyle} from './style'
+import {GlobalStyle} from "../components/Styles/pages/style"
 
 
 

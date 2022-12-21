@@ -7,16 +7,17 @@ import { card, level } from "../../../../../assets";
 import { Js } from "../../../../icons";
 
 const Katas = () => {
+
   const katas = useLoad({ url: submission });
   const getKatas = katas?.response;
   const failed = getKatas?.filter((item) => item.status === "failed");
   const solved = getKatas?.filter((item) => item.status === "solved");
-  console.log(getKatas);
+
   return (
     <Wrapper>
       <Wrapper.Left>
-        <span>{`Completed (${solved?.length})`}</span>
-        <span>{`Unfinished (${failed?.length})`}</span>
+        <span>{`Completed (${solved?.length || 0})`}</span>
+        <span>{`Unfinished (${failed?.length || 0})`}</span>
       </Wrapper.Left>
       <Wrapper.Right>
         {getKatas?.map((item) => {
@@ -25,18 +26,18 @@ const Katas = () => {
             <Wrapper.Katas key={item.id}>
               <Wrapper.Top>
                 <Level>
-                  <span>
+                  <Level.Icon>
                     <Image src={level} alt="level" width={15} height={21} />
-                  </span>
+                  </Level.Icon>
                   <span>{item.kata.difficulty}</span>
                 </Level>
                 <span>{item.kata.title}</span>
                 <Tags.Parent>
                   {tags?.map((el, index) => (
-                    <Tags>
-                      <span key={index}>
+                    <Tags key={index}>
+                      <Level.Icon >
                         <Image src={card} alt="card" width={15} height={15} />
-                      </span>
+                      </Level.Icon>
                       <span>{el}</span>
                     </Tags>
                   ))}

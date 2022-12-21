@@ -1,9 +1,9 @@
 import {createGlobalStyle} from 'styled-components'
 
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
 body {
-    background-color: red;
+    background-color: #25294a;
   overflow: auto !important;
   padding-right: 0 !important;
 }
@@ -58,5 +58,3 @@ input[type="number"] {
     margin: 0 auto;
 }
 `
-
-export {GlobalStyle}

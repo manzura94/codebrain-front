@@ -28,8 +28,8 @@ gap: 30px;
 Wrapper.Katas = styled.div`
 display: flex;
 gap: 5px;
-/* rgba(217, 217, 217, 0.309) */
-border: 1px solid rgba(217, 217, 217, 0.05);
+border-radius: 10px;
+border: 1px solid rgba(217, 217, 217, 0.09);
 padding: 20px;
 `
 
@@ -55,21 +55,31 @@ justify-self: flex-start;
 align-self: flex-start;
 display: flex;
 align-items: center;
-border-radius: 10px;
+border-radius: 6px;
 gap: 4px;
+font-size: 14px;
 `
 
 const Tags = styled.span`
 background: #acacac;
 color: #000;
-padding: 2px;
-border-radius: 10px;
-font-size: 14px;
+padding: 2px 4px;
+border-radius: 6px;
+font-size: 13px;
+display: flex;
+align-items: center;
+gap: 3px;
 `
 
 Tags.Parent = styled.div`
 display: flex;
 gap: 10px;
+`
+
+Level.Icon = styled.span`
+display: flex;
+justify-content: center;
+align-items: center;
 `
 
 export {Wrapper, Icon, Level, Tags}

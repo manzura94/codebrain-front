@@ -3,8 +3,9 @@ import styled from "styled-components";
 const Wrapper = styled.div`
  position: sticky;
  top: 120px;
-    /* background-color: #202443; */
+    background-color: #202443;
     grid-row: span 4;
+    height: fit-content;
     border-radius: 20px;
     padding: 20px;
 `

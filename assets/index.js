@@ -43,6 +43,5 @@ export {
   avatar,
   codemaster,
   coin,
-  statistics,
-
+  statistics
 };

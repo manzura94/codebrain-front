@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Page } from "../../layout";
-import { Wrapper, InnerHtml, Info, Bottom, HR, ButtonWrap, ButtonTry, ButtonSubmit, Loading } from "./style";
+import { Wrapper, InnerHtml, Info, Bottom, HR, ButtonWrap, ButtonTry, ButtonSubmit, Loading } from "../../components/Styles/Library/style";
 import { usePostRequest } from "../../hooks/request";
 import CodeWrap from "../../components/Library/CodeWrap";
 import { getKatasUrl, submissionTry } from "../../utils/urls";
