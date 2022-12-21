@@ -3,14 +3,20 @@ import FightIcon from "./FightIcon";
 import GroupChat from "./GroupChat";
 import HomeIcon from "./HomeIcon";
 import PuzzleIcon from "./PuzzleIcon";
-
-
-
-
+import WarningIcon from './WarningIcon';
+import ViewIcon from "./ViewIcon";
+import Solutions from "./Solutions";
+import Reputation from './Reputation'
+import Js from './Js'
 export {
     HomeIcon,
     PuzzleIcon,
     FightIcon,
     GroupChat,
-    AwardsIcon
+    AwardsIcon,
+    WarningIcon,
+    ViewIcon,
+    Solutions,
+    Reputation,
+    Js
 }

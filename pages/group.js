@@ -5,9 +5,9 @@ import { Page } from '../layout'
 const Group = () => {
   return (
     <Page>
-    <div>
+    <section>
       group
-    </div>
+    </section>
   </Page>
   )
 }

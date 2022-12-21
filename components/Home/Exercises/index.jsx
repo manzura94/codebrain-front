@@ -11,90 +11,92 @@ import {
   BlueSection,
   CodeMasters,
   Section,
+  GridChild,
+  Info,
+  Start
 } from "./style";
-import level from "../../../assets/icons/level.svg";
-import count from "../../../assets/icons/count.svg";
-import hand from "../../../assets/icons/hand.svg";
-import master from "../../../assets/images/codemaster-img.png";
+import {count, level, hand, codemaster} from '../../../assets';
 import Ratings from "./Ratings";
 
 const Exercises = () => {
+
   return (
+
     <Main>
       <GridWrap>
-        <div className="grid-child">
+        <GridChild >
           <Title>Masalalar bo’limi</Title>
           <Text>
             Bizdagi sifati baland masalalar bilan o’z darajangizni oshiring!
           </Text>
           <MiniText>Tugallanmagan masala:</MiniText>
           <Score>
-            <div className="score__blue">
-              <h2 className="score__percent">75%</h2>
-              <p className="score__text">tugallangan</p>
-            </div>
+            <Score.Wrapper >
+              <Score.Percent >75%</Score.Percent>
+              <Score.Text>tugallangan</Score.Text>
+            </Score.Wrapper>
           </Score>
-        </div>
-        <div className="grid-child">
+        </GridChild>
+        <GridChild>
           <Title>Janglar</Title>
           <Text>Qobilyatingizni do’stingiz bilan bellashuvda sinang!</Text>
-        </div>
-        <div className="grid-child">
+        </GridChild>
+        <GridChild >
           <Title>Intervyu</Title>
           <Text>Tez kunda</Text>
-        </div>
+        </GridChild>
       </GridWrap>
       <Exercise>
         <Title>Keyingi masalangiz:</Title>
         <BlueSection>
-          <div className="blue-left">
-            <div className="text">Tic-Tac-Toe</div>
-            <div className="info">
-              <span className="info-icon">
+          <BlueSection.Left >
+            <BlueSection.Text >Tic-Tac-Toe</BlueSection.Text>
+            <Info >
+              <Info.Icon >
                 <Image src={level} width={15} height={21} alt='level'/>
-              </span>
-              <span className="info-numbers">Oson</span>
-            </div>
-            <div className="info">
-              <span className="info-icon">
+              </Info.Icon>
+              <Info.Numbers >Oson</Info.Numbers>
+            </Info>
+            <Info >
+              <Info.Icon >
                 <Image src={count} height={21} width={21} alt='counting'/>
-              </span>
-              <span className="info-numbers">225</span>
-            </div>
-            <div className="info">
-              <span className="info-icon">
+              </Info.Icon>
+              <Info.Numbers >225</Info.Numbers>
+            </Info>
+            <Info >
+              <Info.Icon >
                 <Image src={hand} height={21} width={21} alt='handing'/>
-              </span>
-              <span className="info-numbers">2 brain</span>
-            </div>
-          </div>
-          <div className="blue-right">
-            <button className="start">Start</button>
-          </div>
+              </Info.Icon>
+              <Info.Numbers >2 brain</Info.Numbers>
+            </Info>
+          </BlueSection.Left>
+          <BlueSection.Right >
+            <Start >Start</Start>
+          </BlueSection.Right>
         </BlueSection>
         <CodeMasters>
           <Section>
-            <div className="section-img">
-              <Image src={master} width={84} height={84} alt='master'/>
-            </div>
-            <div className="section-info">
-              <h2 className="section-title">CodeMasters’ Journey</h2>
-              <div className="section-content">
+            <Section.Img>
+              <Image src={codemaster} width={84} height={84} alt='master'/>
+            </Section.Img>
+            <div >
+              <Section.Title>CodeMasters’ Journey</Section.Title>
+              <Section.Content >
                 <p>Boshlanadi: 3 soat ichida</p>
                 <p>Qatnashadi: 150 odam</p>
-              </div>
+              </Section.Content>
             </div>
           </Section>
           <Section>
-          <div className="section-img">
-              <Image src={master} width={84} height={84} alt='journey'/>
-            </div>
-            <div className="section-info">
-              <h2 className="section-title">CodeMasters’ Journey</h2>
-              <div className="section-content">
+          <Section.Img>
+              <Image src={codemaster} width={84} height={84} alt='journey'/>
+            </Section.Img>
+            <div >
+              <Section.Title>CodeMasters’ Journey</Section.Title>
+              <Section.Content>
                 <p>Boshlanadi: 3 soat ichida</p>
                 <p>Qatnashadi: 150 odam</p>
-              </div>
+              </Section.Content>
             </div>
           </Section>
         </CodeMasters>

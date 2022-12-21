@@ -5,9 +5,10 @@ display: flex;
 background: #25294a;
 
 .page{
-    margin-top: 96px;
-    margin-left: 96px;
+    padding-top: 96px;
+    padding-left: 96px;
     min-height: 100vh;
+    /* height: 100vh; */
 }
 `
 

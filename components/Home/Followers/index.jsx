@@ -1,8 +1,7 @@
 import Image from "next/image";
 import React from "react";
+import { avatar, statistics } from "../../../assets";
 import { Wrapper, Account, Dots, Statistics,FriendsWrapper } from "./style";
-import avatar from "../../../assets/images/avatar.png";
-import statistics from "../../../assets/images/statistics.png";
 
 const Followers = () => {
   return (
@@ -12,33 +11,33 @@ const Followers = () => {
           <div>
             <Image src={avatar} alt='avatar-image'/>
           </div>
-          <div className="account-info">
-            <p className="account-name">Nurbek Sapayev</p>
-            <span className="account-username">nurbek_sapayev</span>
+          <div >
+            <Account.Name>Nurbek Sapayev</Account.Name>
+            <Account.Username>nurbek_sapayev</Account.Username>
           </div>
         </Account.Info>
         <Dots>
-          <span className="threedots"></span>
-          <span className="threedots"></span>
-          <span className="threedots"></span>
+          <Dots.Span ></Dots.Span>
+          <Dots.Span ></Dots.Span>
+          <Dots.Span ></Dots.Span>
         </Dots>
       </Account>
       <Statistics>
         <Statistics.Title>Statistika</Statistics.Title>
         <Statistics.Info>
-          <div className="info-item">
+          <div>
             <Image src={statistics} width={82} height={82} alt='avatar-img'/>
           </div>
-          <div className="info-item">
-            <h3 className="info-title">Progress</h3>
-            <p className="info-text">
+          <div>
+            <Statistics.Title >Progress</Statistics.Title>
+            <Statistics.Text >
               Tarif: Premium 
-            </p>
-            <p className="info-text">Ishlangan masalalar: 2 </p>
-            <p className="info-text">Janglar: 5</p>
+            </Statistics.Text>
+            <Statistics.Text>Ishlangan masalalar: 2 </Statistics.Text>
+            <Statistics.Text>Janglar: 5</Statistics.Text>
           </div>
-          <div className="info-item">
-            <button className="info-btn">Hammasi</button>
+          <div>
+            <Statistics.Btn >Hammasi</Statistics.Btn>
           </div>
         </Statistics.Info>
       </Statistics>

@@ -1,9 +1,8 @@
 import React from "react";
-import { Wrapper, General } from "./style";
+import { Wrapper, General, Item } from "./style";
 import Image from "next/image";
-import first from "../../../../assets/icons/first.svg";
-import second from "../../../../assets/icons/second.svg";
-import third from "../../../../assets/icons/third.svg";
+import { first, second, third } from "../../../../assets";
+
 
 const Ratings = () => {
   return (
@@ -11,49 +10,49 @@ const Ratings = () => {
       <Wrapper.Title>Umumiy reyting:</Wrapper.Title>
       <General>
         <General.Item>
-          <div className="item-img">
+          <Item.Img >
             <Image src={first} alt='first'/>
-          </div>
-          <div className="item-info">
-            <p className="username">Polvonnazar</p>
-            <div className="item-rate"></div>
-          </div>
+          </Item.Img>
+          <Item.Info>
+            <Item.Username >Polvonnazar</Item.Username>
+            <Item.Rate></Item.Rate>
+          </Item.Info>
         </General.Item>
         <General.Item>
-          <div className="item-img">
+          <Item.Img >
             <Image src={second} alt='second'/>
-          </div>
-          <div className="item-info">
-            <p className="username">Jo’rabek</p>
-            <div className="item-rate"></div>
-          </div>
+          </Item.Img>
+          <Item.Info >
+            <Item.Username >Jo’rabek</Item.Username>
+            <Item.Rate></Item.Rate>
+          </Item.Info>
         </General.Item>
         <General.Item>
-          <div className="item-img">
+          <Item.Img >
             <Image src={third} alt='third'/>
-          </div>
-          <div className="item-info">
-            <p className="username">Umidjon</p>
-            <div className="item-rate"></div>
-          </div>
+          </Item.Img>
+          <Item.Info >
+            <Item.Username >Umidjon</Item.Username>
+            <Item.Rate></Item.Rate>
+          </Item.Info>
         </General.Item>
         <General.Item>
-          <div className="item-img withnumber">
-            <span className="item-number">4</span>
-          </div>
-          <div className="item-info">
-            <p className="username">Jur’atbek</p>
-            <div className="item-rate"></div>
-          </div>
+          <Item.Img className="withnumber">
+            <Item.Number>4</Item.Number>
+          </Item.Img>
+          <Item.Info>
+            <Item.Username>Jur’atbek</Item.Username>
+            <Item.Rate ></Item.Rate>
+          </Item.Info>
         </General.Item>
         <General.Item>
-          <div className="item-img withnumber">
-            <span className="item-number">5</span>
-          </div>
-          <div className="item-info">
-            <p className="username">Xudayberganov Qo’chqorbek</p>
-            <div className="item-rate"></div>
-          </div>
+          <Item.Img className="withnumber">
+            <Item.Number>5</Item.Number>
+          </Item.Img>
+          <Item.Info>
+            <Item.Username >Xudayberganov Qo’chqorbek</Item.Username>
+            <Item.Rate></Item.Rate>
+          </Item.Info>
         </General.Item>
       </General>
     </Wrapper>

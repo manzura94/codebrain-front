@@ -1,15 +1,10 @@
 import styled from "styled-components";
+import Tab from "@mui/material/Tab";
+
 
 const Wrapper = styled.div`
   width: 70%;
   padding: 24px 28px;
-`;
-
-const Title = styled.h2`
-  font-weight: 600;
-  font-size: 25px;
-  line-height: 30px;
-  color: #ffffff;
 `;
 
 const Container = styled.div`
@@ -119,4 +114,12 @@ Container.Right = styled.div`
     color: #ffffff;
   }
 `;
-export { Wrapper, Title, Container };
+
+const TabName = styled(Tab)`
+color: #fff !important;
+font-size: 22px !important;
+text-transform: capitalize !important;
+margin-left: 30px !important;
+padding: 0 !important;
+`
+export { Wrapper, Container, TabName };

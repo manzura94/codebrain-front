@@ -1,8 +1,8 @@
 import Link from 'next/link'
+import { cloneElement } from 'react'
 import { IconWrap, Menu } from "./style"
 import { HomeIcon, PuzzleIcon, FightIcon, GroupChat, AwardsIcon} from '../../components/icons'
 import { useRouter } from 'next/router'
-import { cloneElement } from 'react'
 
 
 const SideBar = () => {
@@ -36,13 +36,19 @@ const SideBar = () => {
     }
   ]
 
+  function checkActive (path){
+    path = path.split('/').slice(1)[0]
+    const routePath = router.pathname.split('/').slice(1)[0]
+    return routePath == path
+  }
+
   return (
     <Menu>
       {
         menuItems.map(item => (
             <Link key={item.id} href={item.path}>
-              <IconWrap style={{['boxShadow']: item.path === router.pathname && " 0px 4px 8px rgba(255, 255, 255, 0.1)"}}>
-                {cloneElement(item.icon, {color: item.path === router.pathname ? '#2F7DFF' : '#585B71'})}
+              <IconWrap style={{['boxShadow']: checkActive(item.path) && " 0px 4px 8px rgba(255, 255, 255, 0.1)"}}>
+                {cloneElement(item.icon, {color: checkActive(item.path) ? '#2F7DFF' : '#585B71'})}
               </IconWrap>
             </Link>
         ))

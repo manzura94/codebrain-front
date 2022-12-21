@@ -1,9 +1,12 @@
 import UserContext from "../context/UserContext";
-import "../styles/main.scss";
+import {GlobalStyle} from './style'
+
+
 
 function MyApp({ Component, pageProps }) {
   return (
     <UserContext>
+      <GlobalStyle />
       <Component {...pageProps} />
     </UserContext>
   );

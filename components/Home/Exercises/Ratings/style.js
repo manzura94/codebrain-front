@@ -21,46 +21,45 @@ General.Item = styled.div`
   align-items: center;
   gap: 10px;
   margin-bottom: 14px;
+`;
 
-  .item-img {
-    background: #202443;
+const Item = styled.div``;
 
-    .item-number {
-      font-weight: 600;
-      font-size: 25px;
-      line-height: 30px;
-      text-align: center;
-      color: #2f7dff;
-    }
-
-  }
-
-  .item-img.withnumber{
+Item.Img = styled.div`
+  background: #202443;
+  &.withnumber {
     padding: 20px 24px;
-  }
-
-  .item-info {
-    background: #202443;
-    padding: 23px 26px;
-    width: 100%;
-    border-radius: 7px;
-    display: flex;
-    justify-content: space-between;
-
-    .username {
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 19px;
-      color: #ffffff;
-    }
-
-    .item-rate {
-      height: 24px;
-      width: 302px;
-      background: #d9d9d9;
-    }
-    
   }
 `;
 
-export { Wrapper, General };
+Item.Info = styled.div`
+  background: #202443;
+  padding: 23px 26px;
+  width: 100%;
+  border-radius: 7px;
+  display: flex;
+  justify-content: space-between;
+`;
+
+Item.Username = styled.p`
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+`;
+
+Item.Rate = styled.div`
+  height: 24px;
+  width: 302px;
+  background: #d9d9d9;
+`;
+
+Item.Number = styled.span`
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 30px;
+  text-align: center;
+  color: #2f7dff;
+`;
+
+export { Wrapper, General, Item };

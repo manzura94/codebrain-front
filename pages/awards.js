@@ -5,9 +5,9 @@ import { Page } from '../layout'
 const Awards = () => {
   return (
     <Page>
-    <div>
+    <section>
       awards
-    </div>
+    </section>
   </Page>
   )
 }

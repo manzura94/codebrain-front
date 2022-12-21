@@ -5,8 +5,8 @@ import Login from "../../pages/Login";
 import HeaderPage from "../Header";
 import SideBar from "../SideBar";
 import { Wrapper, BlackMirror} from "./style";
-import imfine from "../../assets/icons/im-fine.svg";
 import Image from "next/image";
+import { imfine } from "../../assets";
 
 const Page = ({ children }) => {
   const { user, loading } = useContext(Context);

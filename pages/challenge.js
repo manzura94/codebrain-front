@@ -5,9 +5,9 @@ import { Page } from '../layout'
 const Challenge = () => {
   return (
     <Page>
-    <div>
+    <section>
       challenge
-    </div>
+    </section>
   </Page>
   )
 }

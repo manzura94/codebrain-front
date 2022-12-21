@@ -1,21 +1,17 @@
 import { useContext, useState } from "react";
 import Image from "next/image";
-import { Header, Features, Account } from "./style";
+import { Header, Features, Account, Score } from "./style";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import logo from "../../assets/icons/header-logo.svg";
-import rington from "../../assets/icons/header-rington.svg";
-import arrow from "../../assets/icons/arrow-down.svg";
-import coin from "../../assets/images/coin.png";
-import avatar from "../../assets/images/avatar.png";
 import { Context } from "../../context/UserContext";
-
+import { arrowDown, avatar, coin, headerLogo, rington } from "../../assets";
+import Link from "next/link";
 
 const HeaderPage = () => {
-  const [anchorEl, setAnchorEl] =useState(null)
-  const open = Boolean(anchorEl)
-  const {setUser} = useContext(Context)
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const { setUser } = useContext(Context);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -27,25 +23,25 @@ const HeaderPage = () => {
     localStorage.clear();
   };
 
-  const closeMenu = ()=>{
-    setAnchorEl(false)
-  }
+  const closeMenu = () => {
+    setAnchorEl(false);
+  };
 
   return (
     <Header className=" container">
-      <div className="header__logo">
-        <Image src={logo} alt="logo" />
+      <div>
+        <Image src={headerLogo} alt="logo" />
       </div>
       <Features>
         <Features.Notification>
           <Image src={rington} alt="notification" />
         </Features.Notification>
         <Features.Scores>
-          <div className="scores-img">
-            <Image src={coin} alt="score-coin" />
-          </div>
-          <div className="header__scores-point">
-            <span className="score">500.00</span>
+          <Features.ScoresImg>
+            <Image src={coin} alt="score-coin" width={36} height={36} />
+          </Features.ScoresImg>
+          <div>
+            <Score>500.00</Score>
           </div>
         </Features.Scores>
         <Account>
@@ -56,12 +52,12 @@ const HeaderPage = () => {
             aria-expanded={open ? "true" : undefined}
             onClick={handleClick}
           >
-            <div className="header__account-avatar">
+            <Account.Avatar>
               <Image src={avatar} alt="account-avatar" />
-            </div>
-            <div className="header__account-arrow">
-              <Image src={arrow} alt="arrow-down" />
-            </div>
+            </Account.Avatar>
+            <Account.Arrow>
+              <Image src={arrowDown} alt="arrow-down" />
+            </Account.Arrow>
           </Button>
           <Menu
             id="demo-positioned-menu"
@@ -78,7 +74,9 @@ const HeaderPage = () => {
               horizontal: "left",
             }}
           >
-            <MenuItem>Profile</MenuItem>
+            <Link href={'/profile'}>
+              <MenuItem>Profile</MenuItem>
+            </Link>
             <MenuItem onClick={handleClose}>Logout</MenuItem>
           </Menu>
         </Account>

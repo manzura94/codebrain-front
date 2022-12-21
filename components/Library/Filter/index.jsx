@@ -1,6 +1,5 @@
 import * as React from "react";
 import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 import { Wrapper, Container, Form } from "./style";
@@ -37,32 +36,17 @@ const tagArr = [
 ];
 
 const Filter = ({ data, setData }) => {
-
   const handleChange = (e) => {
     let value = e.target.value;
     let name = e.target.name;
     setData({ ...data, [name]: value });
-
   };
 
   return (
+    
     <Wrapper>
       <Wrapper.Title>Filter</Wrapper.Title>
       <Container>
-        {/* <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-standard-label">Saralash</InputLabel>
-        <Select
-          labelId="demo-simple-select-standard-label"
-          id="demo-simple-select-standard"
-          value={arr}
-          // onChange={handleChange}
-          label="Saralash"
-        >
-          {arr.map(item=>{
-      return <MenuItem value={item}>{item}</MenuItem>
-          })}
-        </Select>
-      </FormControl> */}
         <Form fullWidth>
           <InputLabel id="demo-simple-select-standard-label">
             Qiyinlik daraja

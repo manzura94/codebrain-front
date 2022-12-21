@@ -4,8 +4,9 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 20px 0;
-  background:#202443;
+  background: #202443;
   position: fixed;
+  z-index: 999;
 `;
 
 const Features = styled.div`
@@ -34,53 +35,47 @@ Features.Scores = styled.div`
   justify-content: center;
   align-items: center;
   background: #25294a;
+`;
 
-  .score{
-    color: #fff;
-  }
+const Score = styled.span`
+  color: #fff;
+`;
 
-  .scores-img {
-    width: 40%;
-    margin-left: -30px;
-  }
-  img {
-    width: 36px;
-    height: 36px;
-  }
+Features.ScoresImg = styled.div`
+  width: 40%;
+  margin-left: -30px;
 `;
 
 const Account = styled.div`
- width: 82px;
-    height: 40px;
-    margin-left: 10px;
-    margin-right: 10px;
-    background: #25294a;
-    border-radius: 28px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 82px;
+  height: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background: #25294a;
+  border-radius: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
-    .header__account-arrow{
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+Account.Avatar = styled.div`
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-left: -10px;
+  margin-right: 10px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+`;
 
-    .header__account-avatar{
-      width: 36px;
-        height: 36px;
-        border-radius: 18px;
-        overflow: hidden;
-        margin-left: -10px;
-        margin-right: 10px;
-        img{
-            width: 100%;
-            height: 100%;
-        }
-    }
-`
+Account.Arrow = styled.div`
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
-
-
-export { Header, Features, Account };
+export { Header, Features, Account, Score };
