@@ -1,15 +1,12 @@
 import * as React from "react";
 import Image from "next/image";
 import { useLoad } from "../../../hooks/request";
-import { katas, submission } from "../../../utils/urls";
+import { katas } from "../../../utils/urls";
 import { Wrapper, Container, TabName } from "./style";
 import { removeEmpty } from "../../../utils/helpers";
 import Link from "next/link";
 import { card, level, lock } from "../../../assets";
-import Tabs from "@mui/material/Tabs";
-import TabPanel from "@mui/lab/TabPanel";
-import Box from "@mui/material/Box";
-import { TabContext } from "@mui/lab";
+import {Tabs, TabPanel, Box, TabContext} from '../../MaterialUI'
 
 const Katas = ({ data }) => {
   const [value, setValue] = React.useState("1");
@@ -20,12 +17,6 @@ const Katas = ({ data }) => {
       params: { ...removeEmpty(data) },
     },
     [data]
-  );
-
-  const getSubmitted = useLoad({ url: submission });
-
-  const solved = getSubmitted?.response?.filter(
-    (item) => item.status === "solved"
   );
 
   const handleChange = (_, newValue) => {

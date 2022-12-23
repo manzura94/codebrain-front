@@ -49,6 +49,11 @@ const Data = styled.div`
   color: ${({ status }) => (status ? "green" : "#c05c48")};
 `;
 
+const Span = styled.div`
+  color: ${({ status }) => (status && "#c05c48")};
+
+`
+
 const Test = styled.div`
   display: flex;
   align-items: center;
@@ -65,7 +70,12 @@ Test.Text = styled.div`
 `;
 
 const Failed = styled.div`
-  color: #c05c48;
+  color: inherit;
 `;
 
-export { Wrapper, Failed, Test, Data };
+const Passed = styled.div`
+  color: ${({ status }) => (status  ? "green" : "inherit")};
+
+`
+
+export { Wrapper, Failed, Test, Data, Span, Passed };

@@ -1,30 +1,42 @@
 import * as React from "react";
 import { Page } from "../../layout";
-import { Wrapper, InnerHtml, Info, Bottom, HR, ButtonWrap, ButtonTry, ButtonSubmit, Loading } from "../../components/Styles/Library/style";
+import {
+  Wrapper,
+  InnerHtml,
+  Info,
+  Bottom,
+  HR,
+  ButtonWrap,
+  ButtonTry,
+  ButtonSubmit,
+  Loading,
+} from "../../components/Styles/Library/style";
 import { usePostRequest } from "../../hooks/request";
 import CodeWrap from "../../components/Library/CodeWrap";
-import { getKatasUrl, submissionTry } from "../../utils/urls";
+import { getKatasUrl, submissionSubmit, submissionTry } from "../../utils/urls";
 import { authHost } from "../../utils/https";
-import Box from "@mui/material/Box";
-import Tab from "@mui/material/Tab";
-import TabContext from "@mui/lab/TabContext";
-import TabList from "@mui/lab/TabList";
-import TabPanel from "@mui/lab/TabPanel";
 import Image from "next/image";
-import { javascript } from "@codemirror/lang-javascript";
-import CodeMirror from "@uiw/react-codemirror";
-import { tokyoNight } from "@uiw/codemirror-theme-tokyo-night";
 import Error from "../../components/Result/Error";
 import Default from "../../components/Result/Default";
 import { card, level } from "../../assets";
+import {
+  Box,
+  Tab,
+  TabContext,
+  TabList,
+  TabPanel,
+  javascript,
+  CodeMirror,
+  tokyoNight,
+} from "../../components/MaterialUI";
 
-const LibraryItem = ({ data : dataArr }) => {
-  const [data] = dataArr
+const LibraryItem = ({ data: dataArr }) => {
+
+  const [data] = dataArr;
   const [value, setValue] = React.useState("1");
   const [code, setCode] = React.useState(data?.code);
   const [jsonData, setJsonData] = React.useState(null);
   const [resultActive, setResultActive] = React.useState(false);
-
 
   const kataPostRequest = usePostRequest();
 
@@ -34,7 +46,7 @@ const LibraryItem = ({ data : dataArr }) => {
 
   const { loading } = kataPostRequest;
 
-  const handleSubmitBtn = async () => {
+  const handleTryBtn = async () => {
     setValue("2");
     const postData = {
       code,
@@ -46,25 +58,60 @@ const LibraryItem = ({ data : dataArr }) => {
       url: submissionTry,
       data: postData,
     });
-
+ console.log(response, 'resss');
     if (success) {
-
       if (response.failed) {
         console.log("error");
         setJsonData(response);
         setResultActive(true);
-    }}
+      }
+      if(response.stderr){
+        setJsonData(response)
+        setResultActive(true)
+      }
+      if(response.passed){
+        setJsonData(response)
+        setResultActive(true)
+      }
+    }
   };
 
+  const handleSubmitBtn = async () => {
+    setValue("2");
+    const postData = {
+      code,
+      kataId: data.id,
+      language: "nodejs",
+    };
 
+    const { success, response } = await kataPostRequest.request({
+      url: submissionSubmit,
+      data: postData,
+    });
+ console.log(response, 'rrrrrr');
+    if (success) {
+      if (response.failed) {
+        console.log("error");
+        setJsonData(response);
+        setResultActive(true);
+      } 
+      if(response.stderr){
+        setJsonData(response)
+        setResultActive(true)
+      }
+      if(response.passed){
+        setJsonData(response)
+        setResultActive(true)
+      }
+    }
+  };
   const Result = () => {
     if (resultActive) {
       return <Error jsonData={jsonData} />;
-    }  else {
+    } else {
       return <Default />;
     }
   };
- 
 
   return (
     <Page>
@@ -93,17 +140,16 @@ const LibraryItem = ({ data : dataArr }) => {
                 ></InnerHtml>
                 <HR />
                 <Bottom>
-                
-                    {data?.tags?.split(",").map((el, index) => {
-                      return (
-                        <Bottom.Wrapper key={index}>
+                  {data?.tags?.split(",").map((el, index) => {
+                    return (
+                      <Bottom.Wrapper key={index}>
                         <span>
-                        <Image src={card} alt="card" width={15} height={15} />
+                          <Image src={card} alt="card" width={15} height={15} />
                         </span>
                         <span>{el}</span>
-                        </Bottom.Wrapper>
-                        );
-                      })}
+                      </Bottom.Wrapper>
+                    );
+                  })}
                 </Bottom>
               </TabPanel>
               <TabPanel value="2">
@@ -128,7 +174,7 @@ const LibraryItem = ({ data : dataArr }) => {
             />
           </CodeWrap>
           <ButtonWrap>
-            <ButtonTry onClick={handleSubmitBtn}> Try</ButtonTry>
+            <ButtonTry onClick={handleTryBtn}> Try</ButtonTry>
             <ButtonSubmit onClick={handleSubmitBtn}> Submit</ButtonSubmit>
           </ButtonWrap>
         </Wrapper.Right>

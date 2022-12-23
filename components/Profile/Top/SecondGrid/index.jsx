@@ -4,13 +4,17 @@ import { statistics } from "../../../../assets";
 import { Wrapper } from "./style";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
-import { NodeNextRequest } from "next/dist/server/base-http/node";
+import { submission } from "../../../../utils/urls";
+import { useLoad } from "../../../../hooks/request";
+
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-// const colors = ['#4caf50', '#009688', '#9c27b0', '#673ab7', '#3f51b5', '#ff9800', '#03a9f4', '#00bcd4',  '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107',  '#ff5722', '#795548', '#607d8b' ]
-
 const SecondGrid = () => {
+  const getKatas = useLoad({url: submission})
+  // const filtered = getKatas?.response?.filter(item=> item.status === 'solved')
+  // const easy = filtered?.filter(item=> item.kata.difficulty === 'easy')
+  // console.log(getKatas, easy.length, 'getkatas');
 
    const data = {
     labels: ['very-easy', 'easy', 'medium', 'hard', 'very-hard', 'expert'],

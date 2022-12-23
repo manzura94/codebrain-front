@@ -3,7 +3,7 @@ import { memo } from 'react'
 
 const Default = () => {
   return (
-    <div>Default</div>
+    <div>Here will be shown your result</div>
   )
 }
 

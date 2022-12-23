@@ -1,7 +1,5 @@
 import * as React from "react";
-import MenuItem from "@mui/material/MenuItem";
-import Select from "@mui/material/Select";
-import InputLabel from "@mui/material/InputLabel";
+import {InputLabel, Select, MenuItem} from '../../MaterialUI'
 import { Wrapper, Container, Form } from "./style";
 
 const arr = ["very-easy", "easy", "medium", "hard", "very-hard", "expert"];

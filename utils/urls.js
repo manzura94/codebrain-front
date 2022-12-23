@@ -9,3 +9,4 @@ export const getKatasUrl = (id) => `/katas/${id}`
 export const submission = '/submission'
 export const submissionTry = '/submission/try';
 export const submissionSubmit = '/submission/submit'
+export const getGraphUrl = (id) => `/submission/graph/${id}`

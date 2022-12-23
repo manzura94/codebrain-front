@@ -1,12 +1,13 @@
 import { useContext, useState } from "react";
 import Image from "next/image";
 import { Header, Features, Account, Score } from "./style";
-import Button from "@mui/material/Button";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
+// import Button from "@mui/material/Button";
+// import Menu from "@mui/material/Menu";
+// import MenuItem from "@mui/material/MenuItem";
 import { Context } from "../../context/UserContext";
 import { arrowDown, avatar, coin, headerLogo, rington } from "../../assets";
 import Link from "next/link";
+import {Button, Menu, MenuItem} from '../../components/MaterialUI'
 
 const HeaderPage = () => {
   const [anchorEl, setAnchorEl] = useState(null);

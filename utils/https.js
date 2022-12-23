@@ -25,7 +25,7 @@ authHost.interceptors.response.use((response) => {
     const originalRequest = response.config;
     let refreshToken = typeof window !== 'undefined' &&  localStorage.getItem("refreshToken");
     let id = typeof window !== 'undefined' &&  localStorage.getItem("id");
-  
+    console.log(response, 'responseee');
     if (
       refreshToken &&
       response.data.code === 400 &&

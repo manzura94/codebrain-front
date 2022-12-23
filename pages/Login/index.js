@@ -1,21 +1,23 @@
 import * as React from "react";
 import { Context } from "../../context/UserContext";
-import {  usePostRequest } from "../../hooks/request";
+import { usePostRequest } from "../../hooks/request";
 import { login } from "../../utils/urls";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Wrapper } from "../../components/Styles/Login/style";
-
+import {
+  Avatar,
+  Button,
+  CssBaseline,
+  TextField,
+  FormControlLabel,
+  Checkbox,
+  Link,
+  Grid,
+  Box,
+  Typography,
+  Container,
+  createTheme,
+  ThemeProvider,
+} from "../../components/MaterialUI";
 
 const theme = createTheme();
 
@@ -33,26 +35,24 @@ const Login = () => {
         password: getData.get("password"),
       },
     });
-    const {code,error, accessToken, refreshToken,id} = response;
+    const { code, error, accessToken, refreshToken, id } = response;
     if (
-      (code === 400) ||
+      code === 400 ||
       (code === 400 && error === "USER_NOT_FOUND") ||
-      (code === 400 && error === "WRONG_PASSWORD") 
-      
-    ){
-        alert("Login yoki parol xato")
-        setUser(false);
-      }else{
-      setUser(true)
+      (code === 400 && error === "WRONG_PASSWORD")
+    ) {
+      alert("Login yoki parol xato");
+      setUser(false);
+    } else {
+      setUser(true);
       localStorage.setItem("accessToken", accessToken);
-      localStorage.setItem("refreshToken",refreshToken);
+      localStorage.setItem("refreshToken", refreshToken);
       localStorage.setItem("id", id);
       localStorage.setItem("user", true);
     }
   };
 
   return (
-    
     <Wrapper>
       <ThemeProvider theme={theme}>
         <Container component="main" maxWidth="xs">
