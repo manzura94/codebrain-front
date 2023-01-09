@@ -24,6 +24,7 @@ const HeaderPage = () => {
     localStorage.clear();
   };
 
+
   const closeMenu = () => {
     setAnchorEl(false);
   };

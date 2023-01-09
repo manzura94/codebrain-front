@@ -11,37 +11,62 @@ import { useLoad } from "../../../../hooks/request";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const SecondGrid = () => {
-  const getKatas = useLoad({url: submission})
-  // const filtered = getKatas?.response?.filter(item=> item.status === 'solved')
-  // const easy = filtered?.filter(item=> item.kata.difficulty === 'easy')
-  // console.log(getKatas, easy.length, 'getkatas');
+  const getKatas = useLoad({ url: submission });
+  const filtered = getKatas?.response?.data?.filter(
+    (item) => item.status === "solved"
+  );
 
-   const data = {
-    labels: ['very-easy', 'easy', 'medium', 'hard', 'very-hard', 'expert'],
+  const filterKatas = (arr) => {
+    let label = [];
+    let datas = [];
+
+    const newArr = arr?.reduce((prev, current) => {
+      const key = current.kata.difficulty;
+      const res = prev[key]
+        ? { ...prev, [key]: prev[key] + 1 }
+        : { ...prev, [key]: 1 };
+      return res;
+    }, {});
+
+    for(let key in newArr){
+      label.push(key)
+      datas.push(newArr[key])
+    }
+
+    label = label.length === 0 ? ["no result"] : label;
+    datas = datas.length === 0 ? [1] : datas;
+
+    return [label, datas];
+  };
+
+  const [value, item] = filterKatas(filtered);
+
+  const data = {
+    labels: value,
     datasets: [
       {
-        // label: '# of Votes',
-        data: [6,5,4,3,2,1],
-        backgroundColor: [
-          'rgba(76, 175, 79, 0.4)',
-          'rgba(54, 162, 235, 0.4)',
-          'rgba(255, 206, 86, 0.4)',
-          'rgba(75, 192, 192, 0.4)',
-          'rgba(153, 102, 255, 0.4)',
-          'rgba(231, 45, 3, 0.4)'
+        data: item,
+        backgroundColor:
+        [
+          "rgba(76, 175, 79, 0.4)",
+          "rgba(54, 162, 235, 0.4)",
+          "rgba(255, 206, 86, 0.4)",
+          "rgba(75, 192, 192, 0.4)",
+          "rgba(153, 102, 255, 0.4)",
+          "rgba(231, 45, 3, 0.4)",
         ],
-        borderColor: [
-          'rgba(76, 175, 79, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)',
-          'rgba(255, 86, 34, 1)'
+    
 
+        borderColor: [
+          "rgba(76, 175, 79, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)",
+          "rgba(255, 86, 34, 1)",
         ],
         borderWidth: 1,
-      
       },
     ],
   };
@@ -72,13 +97,16 @@ const SecondGrid = () => {
       <Wrapper.Right>
         <h3>Solved problems</h3>
         <Wrapper.RightInner>
-        <Doughnut  options={{
-          responsive: true,
-          maintainAspectRatio: false,
-          cutout: 100
-        }} data={data} 
-         height={300}
-          width={200}/>
+          <Doughnut
+            options={{
+              responsive: true,
+              maintainAspectRatio: false,
+              cutout: 100,
+            }}
+            data={data}
+            height={300}
+            width={200}
+          />
         </Wrapper.RightInner>
       </Wrapper.Right>
     </Wrapper>

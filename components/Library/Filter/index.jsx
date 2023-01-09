@@ -1,6 +1,8 @@
 import * as React from "react";
-import {InputLabel, Select, MenuItem} from '../../MaterialUI'
-import { Wrapper, Container, Form } from "./style";
+import { useLoad } from "../../../hooks/request";
+import { submission } from "../../../utils/urls";
+import { InputLabel, Select, MenuItem, TextField } from "../../MaterialUI";
+import { Wrapper, Container, Form, Search } from "./style";
 
 const arr = ["very-easy", "easy", "medium", "hard", "very-hard", "expert"];
 const tagArr = [
@@ -34,17 +36,32 @@ const tagArr = [
 ];
 
 const Filter = ({ data, setData }) => {
+
+  
   const handleChange = (e) => {
     let value = e.target.value;
     let name = e.target.name;
+    console.dir(e.target)
     setData({ ...data, [name]: value });
   };
 
   return (
-    
     <Wrapper>
       <Wrapper.Title>Filter</Wrapper.Title>
       <Container>
+        <Search
+          component="form"
+          sx={{
+            "& .MuiTextField-root": { width: "100%" },
+          }}
+          // noValidate
+          autoComplete="off"
+        >
+          <TextField id="outlined-search" label="Search field" type="search" 
+          name='keyword'
+          onChange={(e)=>handleChange(e)}
+          />
+        </Search>
         <Form fullWidth>
           <InputLabel id="demo-simple-select-standard-label">
             Qiyinlik daraja

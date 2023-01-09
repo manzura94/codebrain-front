@@ -35,7 +35,7 @@ const Login = () => {
         password: getData.get("password"),
       },
     });
-    const { code, error, accessToken, refreshToken, id } = response;
+    const { code, error, accessToken, refreshToken, id } = response.data;
     if (
       code === 400 ||
       (code === 400 && error === "USER_NOT_FOUND") ||

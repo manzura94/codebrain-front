@@ -9,7 +9,8 @@ import {
   ButtonWrap,
   ButtonTry,
   ButtonSubmit,
-  Loading,
+  ButtonSkip,
+  Loading
 } from "../../components/Styles/Library/style";
 import { usePostRequest } from "../../hooks/request";
 import CodeWrap from "../../components/Library/CodeWrap";
@@ -18,7 +19,7 @@ import { authHost } from "../../utils/https";
 import Image from "next/image";
 import Error from "../../components/Result/Error";
 import Default from "../../components/Result/Default";
-import { card, level } from "../../assets";
+import { card, level,next } from "../../assets";
 import {
   Box,
   Tab,
@@ -58,20 +59,12 @@ const LibraryItem = ({ data: dataArr }) => {
       url: submissionTry,
       data: postData,
     });
- console.log(response, 'resss');
+
     if (success) {
-      if (response.failed) {
+      if (response.data) {
         console.log("error");
         setJsonData(response);
         setResultActive(true);
-      }
-      if(response.stderr){
-        setJsonData(response)
-        setResultActive(true)
-      }
-      if(response.passed){
-        setJsonData(response)
-        setResultActive(true)
       }
     }
   };
@@ -88,23 +81,16 @@ const LibraryItem = ({ data: dataArr }) => {
       url: submissionSubmit,
       data: postData,
     });
- console.log(response, 'rrrrrr');
+
     if (success) {
-      if (response.failed) {
+      if (response.data) {
         console.log("error");
         setJsonData(response);
         setResultActive(true);
       } 
-      if(response.stderr){
-        setJsonData(response)
-        setResultActive(true)
-      }
-      if(response.passed){
-        setJsonData(response)
-        setResultActive(true)
-      }
     }
   };
+
   const Result = () => {
     if (resultActive) {
       return <Error jsonData={jsonData} />;
@@ -174,6 +160,12 @@ const LibraryItem = ({ data: dataArr }) => {
             />
           </CodeWrap>
           <ButtonWrap>
+            <ButtonSkip>
+              {/* <span> */}
+                <Image src={next} alt='next button' width={19} height={19}/>
+              {/* </span> */}
+              <span>Skip</span>
+            </ButtonSkip>
             <ButtonTry onClick={handleTryBtn}> Try</ButtonTry>
             <ButtonSubmit onClick={handleSubmitBtn}> Submit</ButtonSubmit>
           </ButtonWrap>

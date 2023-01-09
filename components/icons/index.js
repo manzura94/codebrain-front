@@ -8,6 +8,8 @@ import ViewIcon from "./ViewIcon";
 import Solutions from "./Solutions";
 import Reputation from './Reputation'
 import Js from './Js'
+import GrowIcon from "./GrowIcon";
+
 export {
     HomeIcon,
     PuzzleIcon,
@@ -18,5 +20,6 @@ export {
     ViewIcon,
     Solutions,
     Reputation,
-    Js
+    Js,
+    GrowIcon
 }

@@ -1,6 +1,8 @@
+import React from "react";
 import Exercises from "./Exercises";
 import Followers from "./Followers";
 import { HomeWrapper } from "./style";
+
 
 
 

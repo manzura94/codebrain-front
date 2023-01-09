@@ -19,7 +19,13 @@ import warning from "./icons/warning.png";
 import avatar from "./images/avatar.png";
 import codemaster from "./images/codemaster-img.png";
 import coin from "./images/coin.png";
+import nullResult from './images/null.png';
 import statistics from "./images/statistics.png";
+import next from "./icons/next-page.svg";
+import search from "./icons/search.svg";
+
+
+
 
 export {
   arrowDown,
@@ -43,5 +49,8 @@ export {
   avatar,
   codemaster,
   coin,
-  statistics
+  statistics,
+  nullResult,
+  next,
+  search
 };

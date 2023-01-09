@@ -25,11 +25,11 @@ authHost.interceptors.response.use((response) => {
     const originalRequest = response.config;
     let refreshToken = typeof window !== 'undefined' &&  localStorage.getItem("refreshToken");
     let id = typeof window !== 'undefined' &&  localStorage.getItem("id");
-    console.log(response, 'responseee');
+    console.log(response,'%c', 'tushdimi', 'background: #222; color: #bada55')
     if (
       refreshToken &&
       response.data.code === 400 &&
-      response.data.error === "JWT_EXPIRED" &&
+      response.data.error === "JWT_EXPIRED"  &&
       !originalRequest._retry
     ) {
       originalRequest._retry = true;
@@ -38,9 +38,18 @@ authHost.interceptors.response.use((response) => {
           refreshToken,
           id,
         })
-        .then((res) => res.data)
-        .then((data) => {
-            localStorage.setItem("accessToken", data.accessToken);
+        .then(({data}) => { 
+          console.log(data, 'ssssssssss')
+           return data})
+        .then(({data, error}) => {
+          if(error){
+            localStorage.clear()
+            console.log(error)
+            window.location.reload()
+          }
+          const { accessToken } = data;
+          console.log(accessToken , 'yyyyyyyyyyyyyyyyyyyyyyyyyyy')
+            localStorage.setItem("accessToken",accessToken );
             console.log("Access token refreshed!");
             return authHost(originalRequest);
         });

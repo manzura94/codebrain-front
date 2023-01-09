@@ -25,7 +25,7 @@ export function useRequest(options = {}) {
 			if (!sync) setResponse(data)
 			return { response: data, success: true }
 		} catch (e) {
-			console.log(e, 'error')
+			console.log(JSON.stringify(e), 'error')
 			setError(e.response || {})
 			if (e.response === undefined) {
 				alert('Проверьте интернет соединение')

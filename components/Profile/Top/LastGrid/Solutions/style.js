@@ -10,5 +10,12 @@ flex-direction: column;
 gap: 30px;
 `
 
-export {Wrapper}
+const NullRes = styled.div`
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+`
+
+export {Wrapper, NullRes}
 

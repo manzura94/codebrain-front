@@ -10,9 +10,10 @@ const  Exercises= () => {
   const {pathname,  query} = router
   const [data, setData] = React.useState({
     difficulty: '',
-    tags:''
+    tags:'',
+    keyword: ''
    })
-
+console.log(data)
 
    useEffect(() => {
     if(!isEmptyObject(data)){

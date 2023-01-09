@@ -14,20 +14,19 @@ Wrapper.Left = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  
-  
+
   .css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
     color: #fff !important;
   }
-  
+
   .css-1mc6bnb {
     margin-bottom: 30px;
   }
-  
+
   .css-13xfq8m-MuiTabPanel-root {
     padding: 20px 0 !important;
   }
-  `;
+`;
 
 const Bottom = styled.div`
   margin-top: 30px;
@@ -59,14 +58,13 @@ Wrapper.Right = styled.div`
   justify-content: space-between;
 
   .dBPzhH .cm-editor {
-    /* height: 94%; */
+    height: 94%;
   }
 
   .css-1e6y48t-MuiButtonBase-root-MuiButton-root {
     width: 10%;
     align-self: flex-end;
   }
-
 `;
 
 const InnerHtml = styled.div`
@@ -75,8 +73,8 @@ const InnerHtml = styled.div`
 `;
 
 const Loading = styled.h4`
-color: #fff;
-`
+  color: #fff;
+`;
 
 const ButtonTry = styled(Button)`
   font-size: 16px;
@@ -90,6 +88,16 @@ const ButtonSubmit = styled(Button)`
   font-size: 16px;
   background-color: #2f7dff !important;
   color: #fff !important;
+  cursor: pointer;
+`;
+
+const ButtonSkip = styled(Button)`
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent !important;
+  border: 1px solid #2f7dff !important;
   cursor: pointer;
 `;
 
@@ -137,5 +145,6 @@ export {
   Bottom,
   HR,
   ButtonWrap,
-  Loading
+  Loading,
+  ButtonSkip,
 };

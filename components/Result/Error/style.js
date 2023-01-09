@@ -7,7 +7,9 @@ const Wrapper = styled.div`
     status ? "2px solid #c05c48" : "2px solid green"};
   color: ${({ status }) => (status  ? "#c05c48" : "#fff")};
   padding: 20px;
-  height: 670px;
+  height: 100%;
+  max-height: 570px;
+  min-height: 570px;
   border-radius: 10px;
   overflow-y: auto;
   overflow-x: auto;
@@ -75,7 +77,6 @@ const Failed = styled.div`
 
 const Passed = styled.div`
   color: ${({ status }) => (status  ? "green" : "inherit")};
-
 `
 
 export { Wrapper, Failed, Test, Data, Span, Passed };
