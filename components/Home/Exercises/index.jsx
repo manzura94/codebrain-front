@@ -46,8 +46,7 @@ const Exercises = () => {
             <Text>
               Bizdagi sifati baland masalalar bilan o’z darajangizni oshiring!
             </Text>
-            <MiniText>Tugallanmagan masala:</MiniText>
-            {/* <Score.Text>tugallangan</Score.Text> */}
+            <MiniText>Tugallangan masalalar:</MiniText>
             <Score>
               <Score.Wrapper status={percentKata}>
                 <Score.Percent>

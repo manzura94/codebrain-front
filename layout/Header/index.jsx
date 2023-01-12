@@ -24,7 +24,6 @@ const HeaderPage = () => {
     localStorage.clear();
   };
 
-
   const closeMenu = () => {
     setAnchorEl(false);
   };
@@ -35,9 +34,9 @@ const HeaderPage = () => {
         <Image src={headerLogo} alt="logo" />
       </div>
       <Features>
-        <Features.Notification>
+        {/* <Features.Notification>
           <Image src={rington} alt="notification" />
-        </Features.Notification>
+        </Features.Notification> */}
         <Features.Scores>
           <Features.ScoresImg>
             <Image src={coin} alt="score-coin" width={36} height={36} />

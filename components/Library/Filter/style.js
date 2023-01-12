@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 const Form = styled(FormControl)`
 margin-bottom: 25px !important;
 
-.css-1d3z3hw-MuiOutlinedInput-notchedOutline{
+.MuiInputBase-input{
   border:  2px solid #7F7F7F !important;
 }
 

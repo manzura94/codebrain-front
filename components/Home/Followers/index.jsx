@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import { avatar, statistics } from "../../../assets";
-import { Wrapper, Account, Dots, Statistics,FriendsWrapper } from "./style";
+import { avatar, statistics, robot } from "../../../assets";
+import { Wrapper, Account, Dots, Statistics,FriendsWrapper,AddImage, Text } from "./style";
 
 const Followers = () => {
   return (
@@ -42,10 +42,12 @@ const Followers = () => {
         </Statistics.Info>
       </Statistics>
       <FriendsWrapper>
-        <Statistics.Title>Do’stlar</Statistics.Title>
-        <Statistics.Info>
-            
-        </Statistics.Info>
+        <Statistics.Adds>
+            <AddImage>
+              <Image src={robot} alt='robot' width={'150'} height={'150'}/>
+            </AddImage>
+            <Statistics.AddText >Level up your programming with <Text>CodeBrain.uz</Text></Statistics.AddText>
+        </Statistics.Adds>
       </FriendsWrapper>
     </Wrapper>
   );

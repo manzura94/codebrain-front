@@ -21,6 +21,8 @@ import codemaster from "./images/codemaster-img.png";
 import coin from "./images/coin.png";
 import nullResult from './images/null.png';
 import statistics from "./images/statistics.png";
+import robot from "./images/robot.png";
+
 import next from "./icons/next-page.svg";
 import search from "./icons/search.svg";
 
@@ -52,5 +54,6 @@ export {
   statistics,
   nullResult,
   next,
-  search
+  search,
+  robot
 };

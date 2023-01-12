@@ -1,14 +1,14 @@
-import Head from "next/head";
 import { useContext } from "react";
+import Head from "next/head";
+import Image from "next/image";
 import { Context } from "../../context/UserContext";
 import Login from "../../pages/Login";
 import HeaderPage from "../Header";
 import SideBar from "../SideBar";
 import { Wrapper, BlackMirror} from "./style";
-import Image from "next/image";
 import { imfine } from "../../assets";
 
-const Page = ({ children }) => {
+const Page = ({ children , title = 'CodeBrain'}) => {
   const { user, loading } = useContext(Context);
 
   if(loading){

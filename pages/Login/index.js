@@ -35,7 +35,7 @@ const Login = () => {
         password: getData.get("password"),
       },
     });
-    const { code, error, accessToken, refreshToken, id } = response.data;
+    const { code, error, data } = response;
     if (
       code === 400 ||
       (code === 400 && error === "USER_NOT_FOUND") ||
@@ -45,9 +45,9 @@ const Login = () => {
       setUser(false);
     } else {
       setUser(true);
-      localStorage.setItem("accessToken", accessToken);
-      localStorage.setItem("refreshToken", refreshToken);
-      localStorage.setItem("id", id);
+      localStorage.setItem("accessToken", data.accessToken);
+      localStorage.setItem("refreshToken", data.refreshToken);
+      localStorage.setItem("id", data.id);
       localStorage.setItem("user", true);
     }
   };
@@ -77,7 +77,7 @@ const Login = () => {
               noValidate
               sx={{ mt: 1 }}
             >
-              <TextField
+              {/* <TextField
                 margin="normal"
                 required
                 fullWidth
@@ -86,7 +86,7 @@ const Login = () => {
                 name="username"
                 autoComplete="username"
                 autoFocus
-              />
+              /> */}
               <TextField
                 margin="normal"
                 required
@@ -107,10 +107,10 @@ const Login = () => {
                 id="password"
                 autoComplete="current-password"
               />
-              <FormControlLabel
+              {/* <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
-              />
+              /> */}
               <Button
                 type="submit"
                 fullWidth
@@ -119,13 +119,13 @@ const Login = () => {
               >
                 Sign In
               </Button>
-              <Grid container>
+              {/* <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">
                     Forgot password?
                   </Link>
                 </Grid>
-              </Grid>
+              </Grid> */}
             </Box>
           </Box>
         </Container>

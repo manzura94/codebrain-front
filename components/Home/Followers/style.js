@@ -71,6 +71,15 @@ Statistics.Info = styled.div`
   justify-content: space-between;
 `;
 
+Statistics.Adds = styled.div`
+  background: linear-gradient(to right,#0f86d385, #2172f959, #7c3aed6c);
+  border-radius: 7px;
+  padding: 28px;
+  position: relative;
+
+
+`
+
 Statistics.Text = styled.p`
   font-weight: 400;
   font-size: 14px;
@@ -99,6 +108,27 @@ Statistics.Btn = styled.button`
   border: none;
 `;
 
+Statistics.AddText = styled.p`
+color: #fff;
+margin-top: 60px;
+max-width: 300px;
+font-size: 22px;
+line-height: 28px;
+`
+
+const AddImage = styled.div`
+position: absolute;
+top: 0;
+right: 0;
+max-width: 150px;
+max-height: 150px;
+object-fit: fill;
+`
+const Text = styled.h3`
+color: #328af1;
+display: inline-block;
+`
+
 const FriendsWrapper = styled.div``;
 
-export { Wrapper, Account, Dots, Statistics, FriendsWrapper };
+export { Wrapper, Account, Dots, Statistics, FriendsWrapper, AddImage, Text };
