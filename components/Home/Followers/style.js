@@ -120,13 +120,12 @@ const AddImage = styled.div`
 position: absolute;
 top: 0;
 right: 0;
-max-width: 150px;
-max-height: 150px;
-object-fit: fill;
 `
 const Text = styled.h3`
 color: #328af1;
 display: inline-block;
+font-weight: 500;
+
 `
 
 const FriendsWrapper = styled.div``;

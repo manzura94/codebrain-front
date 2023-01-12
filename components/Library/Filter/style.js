@@ -6,25 +6,21 @@ import Box from '@mui/material/Box';
 const Form = styled(FormControl)`
 margin-bottom: 25px !important;
 
-.MuiInputBase-input{
+.MuiOutlinedInput-notchedOutline{
   border:  2px solid #7F7F7F !important;
 }
 
-.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon{
-  font-size: 30px !important;
-  color: #fff !important;
-}
-
-.css-bpeome-MuiSvgIcon-root-MuiSelect-icon{
+.MuiSelect-iconOutlined {
   color: #fff !important;
   font-size: 30px !important;
 }
 
-.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
-  color: #fff !important;
+ .MuiOutlinedInput-input{
+color: #fff !important;
 }
 
-.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root, .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root{
+
+.MuiInputLabel-root{
   color: #6FACFF !important;
 }
 
@@ -34,30 +30,21 @@ const Search = styled(Box)`
 margin-bottom: 25px !important;
 width: 100% !important; 
 
-.css-1g24dm6-MuiInputBase-input-MuiOutlinedInput-input{
-  color: #fff !important;
 
-}
-
-.css-1d3z3hw-MuiOutlinedInput-notchedOutline{
+.MuiOutlinedInput-notchedOutline{
   border:  2px solid #7F7F7F !important;
 }
 
-.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon{
-  font-size: 30px !important;
-  color: #fff !important;
-}
-
-.css-bpeome-MuiSvgIcon-root-MuiSelect-icon{
+.MuiSelect-iconOutlined {
   color: #fff !important;
   font-size: 30px !important;
 }
 
-.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
-  color: #fff !important;
+.MuiOutlinedInput-input{
+color: #fff !important;
 }
 
-.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root, .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root{
+.MuiInputLabel-root{
   color: #6FACFF !important;
 }
 
